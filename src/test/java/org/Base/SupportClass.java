@@ -13,12 +13,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class SupportClass {
 	public static WebDriver driver; // To have shared Memory we kept as static
 	// To Launch ChromeBrowser
 
 	public WebDriver launchChromeBrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\workspace\\SeleniumFrameWork\\driver\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		return driver = new ChromeDriver();
 	}
 
